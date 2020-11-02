@@ -15,7 +15,7 @@ const app = Vue.createApp({
             if (randNumber < .5) {
                 return 'Learn Vue!';
             } else {
-                return 'Mastered vue!';
+                return '<h3>Mastered vue!</h3>';
             }
         }
     }

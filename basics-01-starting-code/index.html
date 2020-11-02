@@ -1,5 +1,5 @@
 <!-- https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463140#questions
-section 2 vid 17 -->
+section 2 vid 19 -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,6 +26,8 @@ section 2 vid 17 -->
       <p>{{ courseGoal}}</p>
        <!-- calling a method function to get executed - js expressions -->
       <p>{{ outputGoal()}}</p>
+        <!-- security risk outputing html - cross site scripting -->
+      <p v-html="outputGoal()"></p>
         <!-- v-bind tells vue to SET the value ON an html element -->
       <p>Learn more at <a v-bind:href="vueLink"> Vue JS </a></p>
     </section>
