@@ -1,0 +1,59 @@
+<!-- https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463164#questions
+sect 2 vid 21 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <!-- vue directives = v- -->
+      <!-- <button v-on:click="counter++">Add</button>
+      <button v-on:click="counter--">Remove</button> -->
+      
+      <!-- moving the click logic to the appjs -->
+      <button v-on:click="add(10)">Add</button>
+      <button v-on:click="subtract(5)">Remove</button>
+      <p>Result: {{ counter }}</p>
+      
+      <hr>
+      
+      <!-- setName w/out the () means i am pointing at it (not overwriting it) -->
+      <!-- <input type="text" v-on:input="setName"> -->
+
+      <!-- calling the method explicitly (instead of pointing) 
+        it allows a different FN with the fixed LN-->
+      <!-- the .keyup.enter is a modifier for the enter key to set the FN -->
+      <input type="text" 
+      v-on:input="setName($event, 'harding')" 
+      v-on:keyup.enter="confirmInput">
+      <p >Your Name is : {{ name }}</p>
+
+      <hr>
+      <!-- submit buttons tend to refresh the browser by default 
+        by sending data to the backend.
+        the dot after submit is a MODIFIER and does what is listed 
+        in the js file -->
+      <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button>Submit</button>
+
+
+      </form>
+
+    </section>
+  </body>
+</html>
