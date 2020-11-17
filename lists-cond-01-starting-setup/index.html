@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Vue Course Goals</h1>
+  </header>
+  <section id="user-goals">
+    <h2>My course goals</h2>
+    <input type="text" v-model="enteredGoal" />
+    <button @click="addGoal">Add Goal</button>
+    <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
+    <ul v-else>
+      <li v-for="(myGoal, index) in goals" v-bind:key="myGoal" @click="removeGoal(index)">
+        {{ myGoal }} - {{ index }}
+      </li>
+    </ul>
+    <!-- <p v-else=""></p> -->
+  </section>
+</body>
+
+</html>
+
+
+<!-- v-if can hold any truthy/falsey value 
+  plus, you can use && or || with v-if 
+  you can point at a data property, computed 
+  property or method that returns true or false
+-->
+<!-- v-else can be used too but MUST come directly
+AFTER a v-if element -->
+<!-- this is different from "hiding" elements.  it 
+detaches them from the DOM -->
+
+<!-- v-show is different to v-if b/c v-show HIDES elements
+and slows performance -->
+
+<!-- v-for allows you to loop thru arrays AND objects
+<li v-for="(value, key, index) in {name: 'Mike', age: 50}">{{ key }}: {{ value }} - {{index}}</li> 
+returns name: Mike  age: 50 - 0 -->
+
+<!-- v-for allows you to loop thru  numbers
+<li v-r="num in 10">{{num}}</li> -->
